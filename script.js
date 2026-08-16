@@ -33,7 +33,7 @@ function playRound(humanChoice, computerChoice){
             console.log(`Draw ${humanChoice} vs ${computerChoice}`)
             console.log(`Player Score: ${humanScore} | Computer Score: ${computerScore}`)
         }else{
-            console.log(`You Lose! ${humanChoice} beats ${computerChoice}`)
+            console.log(`You Lose! ${humanChoice} loses to ${computerChoice}`)
             computerScore++
             console.log(`Player Score: ${humanScore} | Computer Score: ${computerScore}`)
         }
