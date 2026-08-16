@@ -9,3 +9,13 @@ function getComputerChoice(){
         return "scissors"
     }
 }
+
+function getHumanChoice(){
+    let humanChoice = prompt("Choose a Hand!")
+
+    if(humanChoice === 'rock' || humanChoice === 'paper' || humanChoice === 'scissors'){
+        return humanChoice;
+    }else{
+        return "Invalid Choice";
+    }
+}
