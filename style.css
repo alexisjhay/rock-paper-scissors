@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.container{
+    min-height: 100vh;
+    background-color: #06162b;
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+}
+
+.header, .footer{
+    font-family: "Black Ops One", "Courier New", Courier, monospace;
+    color: papayawhip;
+    text-align: center;
+    padding: 32px 8px;
+}
+
+.header > h1{
+    font-size: clamp(24px, 3vh, 48px);
+}
+
+.game-container{
+     font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 1;
+    width: min(100%, 1200px);
+    background-color: #04101f;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 5px 5px papayawhip;
+    border: 1px solid papayawhip;
+    font-weight: bold;
+}
+
+.players-container{
+    display: flex;
+}
+
+.player, .versus, .computer{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    padding-top: 16px;
+}
+
+.player{
+    color: papayawhip;
+    align-items: flex-end;
+}
+.sprite{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+}
+
+
+.icon-photo{
+    background-color: #fff;
+     width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.versus{
+    font-family: "Black Ops One";
+    align-items: center;
+    color:yellow;
+    font-size: 24px;
+}
+
+.computer{
+    color: papayawhip;
+    align-items: flex-start;
+}
+
+.game-panel{
+    flex: 1;
+    display: flex;
+}
+
+.player-panel, .cpu-panel{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    position: relative;
+}
+
+.score-container{
+    background-color: white;
+    padding: 1rem;
+    font-size: 42px;
+    position: absolute;
+    border-radius: 16px;
+}
+
+.playerscore{
+    bottom: 24px;
+    right: 32px;
+}
+
+.cpuscore{
+    bottom: 24px;
+    left: 32px;
+}
+
+.player-panel img{
+    transform: rotate(90deg); 
+}
+
+.cpu-panel img{
+    transform: rotate(-90deg);
+}
+
+.buttons{
+    padding: 32px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.buttons button{
+    padding: .5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 3px 3px yellow;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+}

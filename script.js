@@ -15,7 +15,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanChoice = prompt("Choose a Hand!")
+    let humanChoice = 
     humanChoice = humanChoice.toLowerCase();
 
     if(humanChoice === 'rock' || humanChoice === 'paper' || humanChoice === 'scissors'){
