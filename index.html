@@ -14,43 +14,51 @@
             <h1>ROCK PAPER SCISSORS</h1>
         </div>
 
-        <div class="game-container">
-            <div class="players-container">
-                <div class="player">
-                    <div class = "sprite">
-                        <div class="icon-photo"></div>
-                        <p>Player</p>
+        <div class="outer-container">
+            <div class="game-container">
+                <div class="players-container">
+                    <div class="player">
+                        <div class = "sprite">
+                            <div class="icon-photo"></div>
+                            <p>Player</p>
+                        </div>
+                    </div>
+                    <div class="versus">VS</div>
+                    <div class="computer">
+                        <div class = "sprite">
+                            <div class="icon-photo"></div>
+                            <p>CPU</p>
+                        </div>
                     </div>
                 </div>
-                <div class="versus">VS</div>
-                <div class="computer">
-                    <div class = "sprite">
-                        <div class="icon-photo"></div>
-                        <p>CPU</p>
+                <div class="game-panel">
+                    <div class="player-panel">
+                        <img src="/images/rock.png" alt="" width="250" height="250">
+                        <div class="score-container playerscore">
+                            <p id="playerScore">0</p>
+                        </div>
                     </div>
+                    <div class="cpu-panel">
+                        <img src="/images/rock.png" alt="" width="250" height="250">
+                        <div class="score-container cpuscore">
+                            <p id="playerScore">0</p>
+                        </div>
+                    </div>
+                    <div class="result-container">
+                    
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="rock">Rock</button>
+                    <button id="paper">Paper</button>
+                    <button id="scissors">Scissors</button>
                 </div>
             </div>
-            <div class="game-panel">
-                <div class="player-panel">
-                    <img src="/images/rock.png" alt="" width="250" height="250">
-                    <div class="score-container playerscore">
-                        <p id="playerScore">0</p>
-                    </div>
-                </div>
-                <div class="cpu-panel">
-                    <img src="/images/rock.png" alt="" width="250" height="250">
-                    <div class="score-container cpuscore">
-                        <p id="playerScore">0</p>
-                    </div>
-                </div>
-            </div>
-            <div class="buttons">
-                <button id="rock">Rock</button>
-                <button id="paper">Paper</button>
-                <button id="scissors">Scissors</button>
+
+            <div class="game-log">
+                <h2>GAME LOG</h2>
             </div>
         </div>
-
         <div class="footer">
             <p>Copyright &copy; 2026 alexisjhay</p>
         </div>
