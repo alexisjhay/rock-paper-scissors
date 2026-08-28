@@ -33,7 +33,7 @@
     font-family: "Black Ops One", "Courier New", Courier, monospace;
     color: papayawhip;
     text-align: center;
-    padding: 16px 8px;
+    padding: 32px 8px;
 }
 
 .header h1{
@@ -57,7 +57,6 @@
 }
 
 .game-container{
-    min-height: 80dvh;
     flex-grow: 3;
     max-width: 1000px;
     position: relative;
@@ -207,4 +206,11 @@
     font-size: 36px;
     font-family: "Black Ops One", "Courier New", Courier, monospace;
     color: papayawhip;
+}
+
+@media screen and (max-width: 600px){ 
+    .game-container{
+        min-height: 80dvh;
+    }
+    
 }
