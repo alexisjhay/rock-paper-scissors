@@ -47,13 +47,19 @@
 .game-log{
     flex: 1 1 200px;
     color: papayawhip;
-    line-height: 1.5;
     padding: 8px 24px;
-    gap: 16px;
     max-height: 500px;
+    gap: 16px;
     overflow: auto;
 }
 
+.gameres{
+    display: flex;
+    flex-direction: column-reverse;
+    line-height: 1.5;
+    
+    gap: 16px;
+}
 .game-log h2{
     font-family: "Black Ops One", "Courier New", Courier, monospace;
     text-align: center;

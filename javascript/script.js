@@ -3,7 +3,7 @@ let computerScore = 0;
 const playerHandImage = document.querySelector(".player-panel img");
 const computerHandImage = document.querySelector(".cpu-panel img");
 const imageLinks = "/images/";
-const gameLog = document.querySelector(".game-log");
+const gameLog = document.querySelector(".gameres");
 
 const RPSButtons = document.querySelectorAll(".buttons button");
 RPSButtons.forEach((button) => {
@@ -36,7 +36,7 @@ function playRound(humanChoice, computerChoice){
 
         
         if((humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'scissors' && computerChoice === 'paper')){
-            
+
             gameLogResult.innerText = `You Win!
             ${humanChoiceToUpperCase} beats ${computerChoiceToUpperCase}`;
             gameLog.appendChild(gameLogResult);
