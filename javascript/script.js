@@ -8,15 +8,6 @@ function getComputerChoice(){
     return computerChoice[randomGenerator];
 }
 
-function getHumanChoice(){
-    let humanChoice = 
-    humanChoice = humanChoice.toLowerCase();
-
-    if(humanChoice === 'rock' || humanChoice === 'paper' || humanChoice === 'scissors'){
-        return humanChoice;
-    }
-}
-
 function playRound(humanChoice, computerChoice){
     
         if((humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'scissors' && computerChoice === 'paper')){
