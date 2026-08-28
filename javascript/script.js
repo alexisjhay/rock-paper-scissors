@@ -4,7 +4,7 @@ let computerScore;
 const gameContainer = document.querySelector(".game-container");
 const playerHandImage = document.querySelector(".player-panel img");
 const computerHandImage = document.querySelector(".cpu-panel img");
-const imageLinks = "/images/";
+const imageLinks = "images/";
 const gameLog = document.querySelector(".gameres");
 let gameLogResult = "";
 
