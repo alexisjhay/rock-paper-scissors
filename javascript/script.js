@@ -1,6 +1,42 @@
 let humanScore = 0;
 let computerScore = 0;
+const playerHandImage = document.querySelector(".player-panel img");
+const computerHandImage = document.querySelector(".cpu-panel img");
+const imageLinks = "/images/"
 
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+
+rock.addEventListener("click", () =>{
+    let playerSelection = "rock";
+    let computerSelection = getComputerChoice();
+
+    playerHandImage.src = `${imageLinks}${playerSelection}.png`;
+    computerHandImage.src = `${imageLinks}${computerSelection}.png`;
+
+    playRound(playerSelection, computerSelection);
+})
+
+paper.addEventListener("click", () =>{
+    let playerSelection = "paper";
+    let computerSelection = getComputerChoice();
+
+    playerHandImage.src = `${imageLinks}${playerSelection}.png`;
+    computerHandImage.src = `${imageLinks}${computerSelection}.png`;
+
+    playRound(playerSelection, computerSelection);
+})
+
+scissors.addEventListener("click", () =>{
+    let playerSelection = "scissors";
+    let computerSelection = getComputerChoice();
+
+    playerHandImage.src = `${imageLinks}${playerSelection}.png`;
+    computerHandImage.src = `${imageLinks}${computerSelection}.png`;
+
+    playRound(playerSelection, computerSelection);
+})
 
 function getComputerChoice(){
     const computerChoice = ["rock", "paper", "scissors"]
