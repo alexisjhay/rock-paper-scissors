@@ -1,9 +1,14 @@
 let humanScore = 0;
 let computerScore = 0;
+
+const gameContainer = document.querySelector(".game-container");
 const playerHandImage = document.querySelector(".player-panel img");
 const computerHandImage = document.querySelector(".cpu-panel img");
 const imageLinks = "/images/";
 const gameLog = document.querySelector(".gameres");
+
+const playerScore = document.querySelector(".playerScore");
+const cpuScore = document.querySelector(".cpuScore");
 
 function getComputerChoice(){
     const computerChoice = ["rock", "paper", "scissors"]
@@ -13,8 +18,7 @@ function getComputerChoice(){
 
 function playRound(humanChoice, computerChoice){
         const gameLogResult = document.createElement("p");
-        const playerScore = document.querySelector(".playerScore");
-        const cpuScore = document.querySelector(".cpuScore");
+        
 
         const humanChoiceToUpperCase = humanChoice[0].toUpperCase() + humanChoice.slice(1);
         const computerChoiceToUpperCase = computerChoice[0].toUpperCase() + computerChoice.slice(1);
@@ -43,29 +47,47 @@ function playRound(humanChoice, computerChoice){
         }
 }
 
+function gameWinner(hscore, cscore){
+    if(hscore === 5){
+        const isWinner = "Player";
+        createSplashScreen(isWinner);
+        disableScreen();
+    }else if(cscore === 5){
+        const isWinner = "CPU";
+        createSplashScreen(isWinner);
+        disableScreen();
+    }
+}
 
 function createSplashScreen(winner){
-        const gameContainer = document.querySelector(".game-container");
-        const splashScreen = document.createElement("div");
-        const splashH2 = document.createElement("h2");
-        const splashButton = document.createElement("button");
+    const splashScreen = document.createElement("div");
+    const splashH2 = document.createElement("h2");
+    const splashButton = document.createElement("button");
 
-        splashScreen.classList.add("winner-splash-screen");
-        gameContainer.appendChild(splashScreen);
+    splashScreen.classList.add("winner-splash-screen");
+    gameContainer.appendChild(splashScreen);
 
-        splashH2.textContent = `${winner} Win!`;
-        splashButton.textContent = "Play Again";
+    splashH2.textContent = `${winner} Win!`;
+    splashButton.textContent = "Play Again";
 
-        splashScreen.appendChild(splashH2);
-        splashScreen.appendChild(splashButton);
+    splashScreen.appendChild(splashH2);
+    splashScreen.appendChild(splashButton);
 
 }
 
-
+function disableScreen(){
+    const gameContainerElements = document.querySelectorAll(".game-container .inner");
+    gameContainerElements.forEach((item) => {
+        item.classList.add("disable-content");
+    })
+}
 
 function startGame(){
     humanScore = 0;
     computerScore = 0;
+
+    playerScore.textContent = 0;
+    cpuScore.textContent = 0;
 
     const RPSButtons = document.querySelectorAll(".buttons button");
     RPSButtons.forEach((button) => {
