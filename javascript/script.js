@@ -31,22 +31,27 @@ function playRound(humanChoice, computerChoice){
         const playerScore = document.querySelector(".playerScore");
         const cpuScore = document.querySelector(".cpuScore");
 
+        const humanChoiceToUpperCase = humanChoice[0].toUpperCase() + humanChoice.slice(1);
+        const computerChoiceToUpperCase = computerChoice[0].toUpperCase() + computerChoice.slice(1);
+
         
-
         if((humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'scissors' && computerChoice === 'paper')){
-
-            gameLogResult.textContent = `You Win! ${humanChoice} beats ${computerChoice}`;
+            
+            gameLogResult.innerText = `You Win!
+            ${humanChoiceToUpperCase} beats ${computerChoiceToUpperCase}`;
             gameLog.appendChild(gameLogResult);
             humanScore++
             playerScore.textContent = `${humanScore}`;
 
         }else if(humanChoice === computerChoice){
 
-            gameLogResult.textContent = `Draw ${humanChoice} vs ${computerChoice}`;
+            gameLogResult.innerText = `Draw
+            ${humanChoiceToUpperCase} vs ${computerChoiceToUpperCase}`;
             gameLog.appendChild(gameLogResult);
 
         }else{
-            gameLogResult.textContent = `You Lose! ${humanChoice} loses to ${computerChoice}`;
+            gameLogResult.innerText = `You Lose!
+            ${humanChoiceToUpperCase} loses to ${computerChoiceToUpperCase}`;
             gameLog.appendChild(gameLogResult);
             computerScore++
             cpuScore.textContent = `${computerScore}`;
