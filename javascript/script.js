@@ -104,6 +104,9 @@ function resetGame(){
     humanScore = 0;
     computerScore = 0;
 
+    playerHandImage.src =`${imageLinks}rock.png`;
+    computerHandImage.src =`${imageLinks}rock.png`;
+
     playerScore.textContent = humanScore;
     cpuScore.textContent = computerScore;
 
