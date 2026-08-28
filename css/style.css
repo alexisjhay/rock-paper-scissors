@@ -35,23 +35,27 @@
     box-shadow: 5px 5px papayawhip;
     border: 1px solid papayawhip;
     font-weight: bold;
-    padding: 8px;
+    
     
 }
 
 .game-container{
     flex-grow: 3;
     max-width: 1000px;
+    padding: 8px;
 }
 .game-log{
     flex: 1 1 200px;
     color: papayawhip;
-    text-align: center;
+    line-height: 1.5;
+    padding: 8px 24px;
 
 }
 
 .game-log h2{
     font-family: "Black Ops One", "Courier New", Courier, monospace;
+    text-align: center;
+    margin: 24px;
 }
 
 .outer-container{

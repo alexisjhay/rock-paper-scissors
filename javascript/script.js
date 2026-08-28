@@ -2,7 +2,8 @@ let humanScore = 0;
 let computerScore = 0;
 const playerHandImage = document.querySelector(".player-panel img");
 const computerHandImage = document.querySelector(".cpu-panel img");
-const imageLinks = "/images/"
+const imageLinks = "/images/";
+const gameLog = document.querySelector(".game-log");
 
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
@@ -45,18 +46,29 @@ function getComputerChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
-    
+        const gameLogResult = document.createElement("p");
+        const playerScore = document.querySelector(".playerScore");
+        const cpuScore = document.querySelector(".cpuScore");
+
+        
+
         if((humanChoice === 'rock' && computerChoice === 'scissors') || (humanChoice === 'paper' && computerChoice === 'rock') || (humanChoice === 'scissors' && computerChoice === 'paper')){
-            console.log(`You Win! ${humanChoice} beats ${computerChoice}`)
+
+            gameLogResult.textContent = `You Win! ${humanChoice} beats ${computerChoice}`;
+            gameLog.appendChild(gameLogResult);
             humanScore++
-            console.log(`Player Score: ${humanScore} | Computer Score: ${computerScore}`)
+            playerScore.textContent = `${humanScore}`;
+
         }else if(humanChoice === computerChoice){
-            console.log(`Draw ${humanChoice} vs ${computerChoice}`)
-            console.log(`Player Score: ${humanScore} | Computer Score: ${computerScore}`)
+
+            gameLogResult.textContent = `Draw ${humanChoice} vs ${computerChoice}`;
+            gameLog.appendChild(gameLogResult);
+
         }else{
-            console.log(`You Lose! ${humanChoice} loses to ${computerChoice}`)
+            gameLogResult.textContent = `You Lose! ${humanChoice} loses to ${computerChoice}`;
+            gameLog.appendChild(gameLogResult);
             computerScore++
-            console.log(`Player Score: ${humanScore} | Computer Score: ${computerScore}`)
+            cpuScore.textContent = `${computerScore}`;
         }
 }
 
