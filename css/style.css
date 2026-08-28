@@ -7,11 +7,25 @@
    
 }
 
+.flex{
+    display: flex;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.flex-col-reverse{
+    flex-direction: column-reverse;
+}
+
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
 .container{
     min-height: 100vh;
     background-color: #06162b;
-    display: flex;
-    flex-direction: column;
     padding: 8px;
 }
 
@@ -22,75 +36,34 @@
     padding: 32px 8px;
 }
 
-.header > h1{
-    font-size: clamp(24px, 3vh, 48px);
-}
-
-.game-container, .game-log{
-    display: flex;
-    flex-direction: column;
-    background-color: #04101f;
-    border-radius: 16px;
-    box-shadow: 5px 5px papayawhip;
-    border: 1px solid papayawhip;
-    font-weight: bold;
-    
-    
-}
-
-.game-container{
-    flex-wrap: wrap;
-    flex-grow: 3;
-    max-width: 1000px;
-    padding: 8px;
-    position: relative;
-}
-
-.game-log{
-    flex: 1 1 200px;
-    color: papayawhip;
-    padding: 8px 24px;
-    max-height: 500px;
-    gap: 16px;
-    overflow: auto;
-}
-
-.disable-content{
-    pointer-events: none;
-    opacity: 0.5;          
-    cursor: not-allowed;
-}
-
-.gameres{
-    display: flex;
-    flex-direction: column-reverse;
-    line-height: 1.5;
-    gap: 16px;
-}
-.game-log h2{
-    color: papayawhip;
-    font-family: "Black Ops One", "Courier New", Courier, monospace;
-    text-align: center;
-    margin-top: 24px;
+.header h1{
+    font-size: 46px;
 }
 
 .outer-container{
     font-family: "Roboto", sans-serif;
-    display: flex;
-    flex-wrap: wrap;
     gap: 45px;
     flex: 1;
     width: min(100%, 1400px);
     margin: 0 auto;
 }
 
-.players-container{
-    display: flex;
+.game-container, .game-log{
+    background-color: #04101f;
+    border-radius: 16px;
+    box-shadow: 5px 5px papayawhip;
+    border: 1px solid papayawhip;
+    font-weight: bold;
+}
+
+.game-container{
+    flex-grow: 3;
+    max-width: 1000px;
+    padding: 8px;
+    position: relative;
 }
 
 .player, .versus, .computer{
-    display: flex;
-    flex-direction: column;
     flex: 1;
     justify-content: center;
     padding-top: 16px;
@@ -99,20 +72,6 @@
 .player{
     color: papayawhip;
     align-items: flex-end;
-}
-.sprite{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-}
-
-
-.icon-photo{
-    background-color: #fff;
-     width: 50px;
-    height: 50px;
-    border-radius: 50%;
 }
 
 .versus{
@@ -127,6 +86,18 @@
     align-items: flex-start;
 }
 
+.sprite{
+    gap: 8px;
+    text-align: center;
+}
+
+.icon-photo{
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
 .game-panel{
     flex: 1;
     display: flex;
@@ -134,11 +105,11 @@
 
 .player-panel, .cpu-panel{
     flex: 1;
-    display: flex;
     justify-content: center;
     align-items: center;
     width: auto;
     position: relative;
+    flex-shrink: 1;
 }
 
 .score-container{
@@ -154,22 +125,21 @@
     right: 32px;
 }
 
+.player-panel img{
+    transform: rotate(90deg);
+}
+
 .cpuscore{
     bottom: 24px;
     left: 32px;
 }
 
-.player-panel img{
-    transform: rotate(90deg); 
-}
-
 .cpu-panel img{
-    transform: rotate(-90deg);
+    transform: rotate(-90deg); 
 }
 
 .buttons{
     padding: 32px;
-    display: flex;
     gap: 24px;
     align-items: center;
     justify-content: center;
@@ -185,6 +155,33 @@
     border: none;
     font: inherit;
     cursor: pointer;
+}
+
+.game-log{
+    flex: 1 1 200px;
+    color: papayawhip;
+    padding: 8px 24px;
+    max-height: 500px;
+    gap: 16px;
+    overflow: auto;
+}
+
+.game-log h2{
+    color: papayawhip;
+    font-family: "Black Ops One", "Courier New", Courier, monospace;
+    text-align: center;
+    margin-top: 24px;
+}
+
+.gameres{
+    line-height: 1.5;
+    gap: 16px;
+}
+
+.disable-content{
+    pointer-events: none;
+    opacity: 0.5;          
+    cursor: not-allowed;
 }
 
 .winner-splash-screen{

@@ -8,56 +8,53 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container flex flex-col">
 
         <div class="header">
             <h1>ROCK PAPER SCISSORS</h1>
         </div>
 
-        <div class="outer-container">
-            <div class="game-container">
-                <div class="players-container inner">
-                    <div class="player">
+        <div class="outer-container flex flex-wrap">
+            <div class="game-container flex flex-col flex-wrap">
+                <div class="players-container inner flex">
+                    <div class="player flex flex-col">
                         <div class = "sprite">
                             <div class="icon-photo"></div>
                             <p>Player</p>
                         </div>
                     </div>
-                    <div class="versus">VS</div>
-                    <div class="computer">
-                        <div class = "sprite">
+                    <div class="versus flex flex-col">VS</div>
+                    <div class="computer flex flex-col">
+                        <div class = "sprite flex flex-col">
                             <div class="icon-photo"></div>
                             <p>CPU</p>
                         </div>
                     </div>
                 </div>
                 <div class="game-panel inner">
-                    <div class="player-panel">
+                    <div class="player-panel flex">
                         <img src="/images/rock.png" alt="" width="250" height="250">
                         <div class="score-container playerscore">
                             <p class="playerScore"></p>
                         </div>
                     </div>
-                    <div class="cpu-panel">
+                    <div class="cpu-panel flex">
                         <img src="/images/rock.png" alt="" width="250" height="250">
                         <div class="score-container cpuscore">
                             <p class="cpuScore"></p>
                         </div>
                     </div>
-                    <div class="result-container">
-                    
-                    </div>
                 </div>
-                <div class="buttons inner">
+                <div class="buttons inner flex">
                     <button id="rock">Rock</button>
                     <button id="paper">Paper</button>
                     <button id="scissors">Scissors</button>
                 </div>
             </div>
 
-            <div class="game-log">
+            <div class="game-log flex flex-col">
                 <h2>GAME LOG</h2>
-                <div class="gameres">
+                <div class="gameres flex flex-col-reverse">
                 
                 </div>
 
