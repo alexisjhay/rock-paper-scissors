@@ -43,7 +43,9 @@
     flex-grow: 3;
     max-width: 1000px;
     padding: 8px;
+    position: relative;
 }
+
 .game-log{
     flex: 1 1 200px;
     color: papayawhip;
@@ -53,14 +55,20 @@
     overflow: auto;
 }
 
+.disable-content{
+    pointer-events: none;
+    opacity: 0.5;          
+    cursor: not-allowed;
+}
+
 .gameres{
     display: flex;
     flex-direction: column-reverse;
     line-height: 1.5;
-    
     gap: 16px;
 }
 .game-log h2{
+    color: papayawhip;
     font-family: "Black Ops One", "Courier New", Courier, monospace;
     text-align: center;
     margin-top: 24px;
@@ -169,11 +177,34 @@
     
 }
 
-.buttons button{
+.buttons button, 
+.winner-splash-screen button{
     padding: .5rem 2rem;
     border-radius: 20px;
     box-shadow: 3px 3px yellow;
     border: none;
     font: inherit;
     cursor: pointer;
+}
+
+.winner-splash-screen{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 300px;
+    background-color: #06162b;
+    height: 200px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.winner-splash-screen h2{
+    font-size: 36px;
+    font-family: "Black Ops One", "Courier New", Courier, monospace;
+    color: papayawhip;
 }

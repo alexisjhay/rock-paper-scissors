@@ -5,21 +5,6 @@ const computerHandImage = document.querySelector(".cpu-panel img");
 const imageLinks = "/images/";
 const gameLog = document.querySelector(".gameres");
 
-const RPSButtons = document.querySelectorAll(".buttons button");
-RPSButtons.forEach((button) => {
-
-    button.addEventListener("click", ()=> {
-        const playerSelection = button.id;
-        let computerSelection = getComputerChoice();
-
-        playerHandImage.src = `${imageLinks}${playerSelection}.png`;
-        computerHandImage.src = `${imageLinks}${computerSelection}.png`;
-
-        playRound(playerSelection, computerSelection);
-    })
-
-});
-
 function getComputerChoice(){
     const computerChoice = ["rock", "paper", "scissors"]
     let randomGenerator = Math.floor(Math.random()* computerChoice.length -1) + 1;
@@ -58,21 +43,46 @@ function playRound(humanChoice, computerChoice){
         }
 }
 
-function playGame(){
-    for(i = 1; i <=5; i++){
-        console.log(`Round ${i}`)
-        console.log(``)
-        playRound(getHumanChoice(), getComputerChoice())
-        console.log(``)
-        console.log(`---------------------------------------`)
-    }
-    if(humanScore > computerScore){
-        console.log(`Congratulations! Player: ${humanScore} | Computer ${computerScore}`)
-    }else if(humanScore === computerScore){
-        console.log(`Draw! Player: ${humanScore} | Computer ${computerScore}`)
-    }else{
-        console.log(`Better Luck Next Time! Player: ${humanScore} | Computer ${computerScore}`)
-    }
+
+function createSplashScreen(winner){
+        const gameContainer = document.querySelector(".game-container");
+        const splashScreen = document.createElement("div");
+        const splashH2 = document.createElement("h2");
+        const splashButton = document.createElement("button");
+
+        splashScreen.classList.add("winner-splash-screen");
+        gameContainer.appendChild(splashScreen);
+
+        splashH2.textContent = `${winner} Win!`;
+        splashButton.textContent = "Play Again";
+
+        splashScreen.appendChild(splashH2);
+        splashScreen.appendChild(splashButton);
+
 }
 
-playGame();
+
+
+function startGame(){
+    humanScore = 0;
+    computerScore = 0;
+
+    const RPSButtons = document.querySelectorAll(".buttons button");
+    RPSButtons.forEach((button) => {
+
+    button.addEventListener("click", ()=> {
+        const playerSelection = button.id;
+        let computerSelection = getComputerChoice();
+
+        playerHandImage.src = `${imageLinks}${playerSelection}.png`;
+        computerHandImage.src = `${imageLinks}${computerSelection}.png`;
+
+        playRound(playerSelection, computerSelection);
+        gameWinner(humanScore, computerScore);
+    })
+
+    });
+
+}
+
+startGame();
