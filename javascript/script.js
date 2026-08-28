@@ -5,39 +5,20 @@ const computerHandImage = document.querySelector(".cpu-panel img");
 const imageLinks = "/images/";
 const gameLog = document.querySelector(".game-log");
 
-const rock = document.querySelector("#rock");
-const paper = document.querySelector("#paper");
-const scissors = document.querySelector("#scissors");
+const RPSButtons = document.querySelectorAll(".buttons button");
+RPSButtons.forEach((button) => {
 
-rock.addEventListener("click", () =>{
-    let playerSelection = "rock";
-    let computerSelection = getComputerChoice();
+    button.addEventListener("click", ()=> {
+        const playerSelection = button.id;
+        let computerSelection = getComputerChoice();
 
-    playerHandImage.src = `${imageLinks}${playerSelection}.png`;
-    computerHandImage.src = `${imageLinks}${computerSelection}.png`;
+        playerHandImage.src = `${imageLinks}${playerSelection}.png`;
+        computerHandImage.src = `${imageLinks}${computerSelection}.png`;
 
-    playRound(playerSelection, computerSelection);
-})
+        playRound(playerSelection, computerSelection);
+    })
 
-paper.addEventListener("click", () =>{
-    let playerSelection = "paper";
-    let computerSelection = getComputerChoice();
-
-    playerHandImage.src = `${imageLinks}${playerSelection}.png`;
-    computerHandImage.src = `${imageLinks}${computerSelection}.png`;
-
-    playRound(playerSelection, computerSelection);
-})
-
-scissors.addEventListener("click", () =>{
-    let playerSelection = "scissors";
-    let computerSelection = getComputerChoice();
-
-    playerHandImage.src = `${imageLinks}${playerSelection}.png`;
-    computerHandImage.src = `${imageLinks}${computerSelection}.png`;
-
-    playRound(playerSelection, computerSelection);
-})
+});
 
 function getComputerChoice(){
     const computerChoice = ["rock", "paper", "scissors"]
