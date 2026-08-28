@@ -1,14 +1,17 @@
-let humanScore = 0;
-let computerScore = 0;
+let humanScore;
+let computerScore;
 
 const gameContainer = document.querySelector(".game-container");
 const playerHandImage = document.querySelector(".player-panel img");
 const computerHandImage = document.querySelector(".cpu-panel img");
 const imageLinks = "/images/";
 const gameLog = document.querySelector(".gameres");
+let gameLogResult = "";
 
 const playerScore = document.querySelector(".playerScore");
 const cpuScore = document.querySelector(".cpuScore");
+
+const gameContainerElements = document.querySelectorAll(".game-container .inner");
 
 function getComputerChoice(){
     const computerChoice = ["rock", "paper", "scissors"]
@@ -17,8 +20,7 @@ function getComputerChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
-        const gameLogResult = document.createElement("p");
-        
+        gameLogResult = document.createElement("p");
 
         const humanChoiceToUpperCase = humanChoice[0].toUpperCase() + humanChoice.slice(1);
         const computerChoiceToUpperCase = computerChoice[0].toUpperCase() + computerChoice.slice(1);
@@ -73,23 +75,41 @@ function createSplashScreen(winner){
     splashScreen.appendChild(splashH2);
     splashScreen.appendChild(splashButton);
 
-}
+    splashButton.addEventListener("click", (e) => {
+        clearGameLog();
+        resetGame();
+        splashScreen.remove();
+    })
 
+}
 function disableScreen(){
-    const gameContainerElements = document.querySelectorAll(".game-container .inner");
     gameContainerElements.forEach((item) => {
         item.classList.add("disable-content");
     })
 }
 
-function startGame(){
+function enableScreen(){
+    gameContainerElements.forEach((item) => {
+        item.classList.remove("disable-content");
+    })
+}
+
+function clearGameLog(){
+    gameLog.textContent = ""
+}
+
+function resetGame(){
+    enableScreen();
+
     humanScore = 0;
     computerScore = 0;
 
-    playerScore.textContent = 0;
-    cpuScore.textContent = 0;
+    playerScore.textContent = humanScore;
+    cpuScore.textContent = computerScore;
 
-    const RPSButtons = document.querySelectorAll(".buttons button");
+}
+
+const RPSButtons = document.querySelectorAll(".buttons button");
     RPSButtons.forEach((button) => {
 
     button.addEventListener("click", ()=> {
@@ -103,8 +123,6 @@ function startGame(){
         gameWinner(humanScore, computerScore);
     })
 
-    });
+});
 
-}
-
-startGame();
+resetGame();
